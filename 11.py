@@ -2,10 +2,11 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 def main():
     try:
+        
         img = Image.open("ss.png")
         width, height = img.size
 
-        new_width, new_height = 200, 200
+        new_width, new_height = 300, 300
         resized_image = img.resize((new_width, new_height))
         resized_image.save("resized_ss.png")
 
@@ -13,11 +14,13 @@ def main():
         blurred_image.save("blurred_ss.png")
 
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype("arial.ttf", size=24)
+        font = ImageFont.truetype("arial.ttf", size=72)
         text = "Hello, Pillow!"
         draw.text((70, 70), text, fill="blue", font=font)
-        img.save("text_overlay_ss.png")
+        img.save("text_ss.png")
 
     except FileNotFoundError:
         print("Image file not found. Make sure 'ss.png' exists in the same directory.")
+
+main()
 
