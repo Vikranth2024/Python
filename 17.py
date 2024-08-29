@@ -1,9 +1,10 @@
 import random
 
 def guessing_game():
-    num1 = random.randint(0,1000)
+    range = 1000
+    num1 = random.randint(0,range)
     attempts= 0
-    user_guess = 9999
+    user_guess = range+1
     while num1 != user_guess :
         user_guess = int(input("Guess the Number: "))
 
